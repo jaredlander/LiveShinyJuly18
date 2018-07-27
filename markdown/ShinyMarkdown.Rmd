@@ -1,0 +1,22 @@
+---
+title: Shiny in Markdown
+author: Jared P. Lander
+output: html_document
+runtime: shiny
+---
+
+# Testing Testing
+
+1, 2, 3
+
+# Select Input
+
+```{r select-input}
+selectInput(
+    inputId='StateSelection',
+    label='Please choose a state',
+    choices=list('NY', 'NJ', 'MA', 'RI', 'TX'),
+    selected='MA'
+)
+```
+
