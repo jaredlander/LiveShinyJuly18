@@ -55,3 +55,25 @@ dateRangeInput(
 )
 ```
 
+# Text Input
+
+```{r text-input}
+textInput(
+    inputId='TextSample',
+    label='Write Something',
+    placeholder='Write on the ghost'
+)
+
+textAreaInput(
+    inputId='TextAreaSample',
+    label='Write a long passage'
+)
+
+passwordInput(
+    inputId='PasswordSample',
+    label='Enter the secret'
+)
+
+renderText(input$PasswordSample)
+```
+
