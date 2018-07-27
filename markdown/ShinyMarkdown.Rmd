@@ -24,3 +24,34 @@ selectInput(
 renderText(input$StateSelection)
 ```
 
+# Other Inputs
+
+```{r other-inputs}
+sliderInput(
+    inputId='SliderSample',
+    label='This is a slider',
+    min=0, max=10, value=5
+)
+
+checkboxInput(
+    inputId='CheckSample',
+    label='Check This'
+)
+
+radioButtons(
+    inputId='RadioSample',
+    label='Choose one',
+    choices=list('AB', 'A', 'B', 'O')
+)
+
+dateInput(
+    inputId='DateChoice',
+    label='Select a date'
+)
+
+dateRangeInput(
+    inputId='DateRangeChoice',
+    label='Choose your dates'
+)
+```
+
