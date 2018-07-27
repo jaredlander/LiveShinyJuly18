@@ -2,7 +2,7 @@ library(shiny)
 
 navbarPage(
     title='Our First Shiny App',
-    selected='State Info',
+    selected='Simple Plot',
     tabPanel(
         title='First Page',
         'Hi'
@@ -20,6 +20,23 @@ navbarPage(
         ),
         textOutput(
             outputId='DisplayState'
+        )
+    ),
+    tabPanel(
+        title='Simple Plot',
+        fluidRow(
+            column(
+                width=3,
+                selectInput(
+                    inputId='CarColumn',
+                    label='Please choose a column to plot',
+                    choices=names(mtcars)
+                )
+            ),
+            column(
+                width=9,
+                plotOutput(outputId='CarHist')
+            )
         )
     )
 )
