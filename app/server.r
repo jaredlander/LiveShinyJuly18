@@ -1,5 +1,9 @@
 library(shiny)
 library(ggplot2)
+library(magrittr)
+
+pizza <- jsonlite::fromJSON('FavoriteSpots.json') %>% 
+    tidyr::unnest()
 
 shinyServer(function(input, output, session){
     
@@ -10,4 +14,7 @@ shinyServer(function(input, output, session){
             geom_histogram()
     })
     
+    output$PizzaTable <- DT::renderDataTable({
+        DT::datatable(pizza, rownames=FALSE)
+    })
 })

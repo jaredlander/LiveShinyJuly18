@@ -2,7 +2,7 @@ library(shiny)
 
 navbarPage(
     title='Our First Shiny App',
-    selected='Simple Plot',
+    selected='Pizza',
     tabPanel(
         title='First Page',
         'Hi'
@@ -36,6 +36,18 @@ navbarPage(
             column(
                 width=9,
                 plotOutput(outputId='CarHist')
+            )
+        )
+    ),
+    tabPanel(
+        title='Pizza',
+        fluidRow(
+            column(
+                width=6,
+                DT::dataTableOutput(outputId='PizzaTable')
+            ),
+            column(
+                width=6
             )
         )
     )
