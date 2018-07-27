@@ -1,8 +1,10 @@
 library(shiny)
+library(shinythemes)
 
 navbarPage(
     title='Our First Shiny App',
     selected='Pizza',
+    theme=shinytheme(theme='cerulean'),
     tabPanel(
         title='First Page',
         'Hi'
@@ -47,7 +49,8 @@ navbarPage(
                 DT::dataTableOutput(outputId='PizzaTable')
             ),
             column(
-                width=6
+                width=6,
+                leaflet::leafletOutput(outputId='PizzaMap')
             )
         )
     )
